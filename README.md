@@ -85,4 +85,15 @@ Status: Downloaded newer image for ruby:2.5.5-alpine3.9
 ```
 
 # Assignments
-Throughout the workshop we will complete various assignments. This section will contain a list with links to the individual assignments.
+Throughout the workshop you will complete the following assignments:
+
+* [Assignment 1 - Hello World](_assignments/assignment_01.md)
+* [Assignment 2 - Your first image](_assignments/assignment_02.md)
+* [Assignment 3 - Running Rails](_assignments/assignment_03.md)
+* [Assignment 4 - Talking to a service](_assignments/assignment_04.md)
+* [Assignment 5 - Integrating Postgres](_assignments/assignment_05.md)
+* [Assignment 6 - Utilizing layers](_assignments/assignment_06.md)
+* [Assignment 7 - Glueing things together](_assignments/assignment_07.md)
+* [Assignment 8 - Iterating](_assignments/assignment_08.md)
+* [Assignment 9 - Integrating Sidekiq](_assignments/assignment_09.md)
+
