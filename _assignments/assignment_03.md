@@ -5,7 +5,7 @@ For this and the remaining assignments, we will work with the demo application t
 ## The Dockerfile
 Just as before, we will create a `Dockerfile` inside the demo applications directory:
 ```Dockerfile
-FROM jfahrer/ruby-on-ice:2.5.3-alpine
+FROM jfahrer/ruby:2.5.5-alpine3.9-railsconf
 
 RUN apk add --update --no-cache \
       bash \
