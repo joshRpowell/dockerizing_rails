@@ -9,6 +9,14 @@
 
 
 ## Assignments length requirements
-* 1: 2 min
-* 2: 5 min
-* 3: 8 min
+* Wait: 2 min
+* L1: 18 min
+* A1: 1 min
+* L2: 5 min
+* A2: 5 min
+* L3: 
+* A3: 8 min
+* L4: 
+* A4:
+
+Total: ? min
