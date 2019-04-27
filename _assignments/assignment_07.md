@@ -47,6 +47,7 @@ Let's try that again, but this time we will run the test suite:
 docker-compose run --rm app rspec
 ```
 
+And we can easily start a rails console as well:
 ```
 docker-compose run --rm app rails c
 ```
