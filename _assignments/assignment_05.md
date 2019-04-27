@@ -1,5 +1,5 @@
 # Assignment 5 - Integrating Postgres
-Before we start, let's clean up. Make sure to stop all containers and delete them. Either use `docker container prune` (if you don't care about any of the containers on your system) or `docker container ls -a` and `docker container rm`
+Before we start, let's clean up. Make sure to stop all containers and delete them. Either use `docker container ls -a` and `docker container rm` OR `docker container prune` (*if you don't care about any of the containers on your system*)
 
 ## Configuring the application
 Currently, our Rails app is using SQLite as a DBMS. We're going to switch to PostgresSQL and need to update our `database.yml`. An updated `database.yml` can be found in the `config` directory
@@ -9,7 +9,7 @@ cp config/database.yml.postgres config/database.yml
 
 Make sure to take a look at the updated `database.yml`. As you can see, we are utilizing environment variables to configure our connection to PostgreSQL.
 
-Since we made changes to the source code of our application, we need to rebuild the image:
+Since we made changes to the source code of our application, __we need to rebuild the image__:
 ```
 docker image build -t your_docker_id/rails_app:v1 .
 ```
