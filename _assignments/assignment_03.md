@@ -1,6 +1,6 @@
 # Assignment 3 - Running Rails
 
-For this and the remaining assignments, we will work with the demo application that is part of this repository. Make sure to change into the directory that you cloned this repository into (see [here](../README.md#getting-started)). 
+For this and the remaining assignments, we will work with the demo application that is part of this repository. Make sure to __*change into the directory that you cloned this repository into*__ (see [here](../README.md#getting-started)). 
 
 ## The Dockerfile
 Just as before, we will create a `Dockerfile` **inside the demo applications directory**:
@@ -57,7 +57,7 @@ docker container run -it your_docker_id/rails_app:v1 rspec
 
 You will see that __one of the tests will fail__ - that is OK and expected! You will get the time to fix the failing test later in the workshop.
 
-_Side note:_ We don't need the `-it` flags here because we don't run an interactive program like the Rails console. However, we will only see the colors in the output with the `-t` flag. As there is no harm in adding those flags, we will keep doing this from there on even if we start non-interactive programs.
+__*Side note:*__ We don't need the `-it` flags here because we don't run an interactive program like the Rails console. However, we will only see the colors in the output with the `-t` flag. As there is no harm in adding those flags, we will keep doing this from there on even if we start non-interactive programs.
 
 ## Finding out what is going on
 The Docker CLI is pretty straight forward. To get more information about what is possible, try just typing `docker`.
@@ -75,7 +75,7 @@ docker container stop # Stop a running container
 docker container kill # Kill a running container
 ```
 
-Go ahead an try them out!
+Go ahead an try them out! It might make sense to use a second terminal to run the `stop` / `kill` / `ls` / `rm` commands while you keep a container running in the other terminal.
 
 ## Cleaning up
 Now that we are donw, it is time to clean up a little bit.

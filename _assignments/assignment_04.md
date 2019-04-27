@@ -14,6 +14,8 @@ Go ahead and try to create a few books via the web interface.
 
 Once you are done, you can terminate Rails and the container by pressing `Ctrl-C`.
 
+__*Side not* this owrks because of puma
+
 
 ## Things to try
 * What will happen if you try to start a second container while the first one is still running?
