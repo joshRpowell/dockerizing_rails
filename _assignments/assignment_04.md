@@ -14,8 +14,9 @@ Go ahead and try to create a few books via the web interface.
 
 Once you are done, you can terminate Rails and the container by pressing `Ctrl-C`.
 
-__*Side not* this owrks because of puma
+__*Side not*__: Accessing a service inside a container will NOT work of the service only listens on `localhost`. In other words, you have to make sure that the service listens on the outwards facing ethernet interfaces of the container. Our rails application is configured to listen an `0.0.0.0` which is an alias for all interfaces. See `config/puma.rb` for details.
 
+__*Side not*__: When using `-p 3000:3000` you instruct Docker to listen on all interfaces on your local machine. That means that your rails service will be accessible from other machines. Not what you want? Try `-p 127.0.0.1:3000:3000` instead to only listen on `localhost`.
 
 ## Things to try
 * What will happen if you try to start a second container while the first one is still running?

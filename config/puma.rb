@@ -11,11 +11,12 @@ threads threads_count, threads_count
 #
 # port        ENV.fetch("PORT") { 3000 }
 
+# We have to listen on all interfaces here to make sure that
+bind "tcp://0.0.0.0:#{ENV.fetch("PORT") { 3000 }}"
+
 # Specifies the `environment` that Puma will run in.
 #
 environment ENV.fetch("RAILS_ENV") { "development" }
-
-bind "tcp://0.0.0.0:#{ENV.fetch("PORT") { 3000 }}"
 
 # Specifies the number of `workers` to boot in clustered mode.
 # Workers are forked webserver processes. If using threads and workers together
