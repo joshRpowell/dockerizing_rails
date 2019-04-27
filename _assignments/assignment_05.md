@@ -30,7 +30,7 @@ Let's dig a little into the flags we used to start the container:
 
 Make sure that the container is up and running by running the `docker container ls` command. You should see a container with the name `pg` in the output:
 ```
-docker container ls
+$ docker container ls
 CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                              NAMES
 66bbf21aedc0        postgres:10.6-alpine   "docker-entrypoint.s…"   17 seconds ago      Up 16 seconds       5432/tcp                           pg
 ```
@@ -46,7 +46,9 @@ docker container run -p 3000:3000 --link pg \
 
 The environment variables that we pass in are used to configure the connection to our Postgres database. These environment variables are read in out `database.yml`.
 
-You might also have spotted the `--link` flag in our command. This flag allows us to talk to our Postgres container by its name `pg`. Just FYI, `--link` is deprecated and we will learn about a better mechanism later in the workshop. However, it is the easiest way to get the app up and running for now.
+You might also have spotted the `--link` flag in our command. This flag allows us to talk to our Postgres container by its name `pg`. 
+
+__*Side note*__': `--link` is deprecated and we will learn about a better mechanism later in the workshop. However, it is the easiest way to get the app up and running for now.
 
 If you open your browser and go to http://localhost:3000, you will see that we need to migrate our database. So let's do that in another container (in another shell):
 ```
