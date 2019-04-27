@@ -56,7 +56,7 @@ docker container run -it your_docker_id/rails_app:v1 rspec
 
 You will see that __one of the tests will fail__ - that is OK and expected! You will get the time to fix the failing test later in the workshop.
 
-_Side note:_ We don't need the `-it` flags here because we don't run an interactive program like the Rails console. However, we will only see the colors in the output with the `-t` flag.
+_Side note:_ We don't need the `-it` flags here because we don't run an interactive program like the Rails console. However, we will only see the colors in the output with the `-t` flag. As there is no harm in adding those flags, we will keep doing this from there on even if we start non-interactive programs.
 
 ## Finding out what is going on
 The Docker CLI is pretty straight forward. To get more information about what is possible, try just typing `docker`.
