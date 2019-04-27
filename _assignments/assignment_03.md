@@ -4,6 +4,7 @@ For this and the remaining assignments, we will work with the demo application t
 
 ## The Dockerfile
 Just as before, we will create a `Dockerfile` inside the demo applications directory:
+
 ```Dockerfile
 FROM jfahrer/ruby:2.5.5-alpine3.9-railsconf
 
@@ -26,7 +27,7 @@ RUN bundle install
 CMD ["rails", "console"]
 ```
 
-For convenience, I already put a `.dockerignore` file in place. Similar to a `.gitignore` file, the files and directories listed in the `.dockerignore` file will be ignored when copying data into the container image.
+For convenience, I already put a `.dockerignore` file in place. Similar to a `.gitignore` file, the files and directories listed in the `.dockerignore` file will be ignored when copying data into the container image. Feel free to open the `.dockerignore` file and take a look.
 
 So, let's go ahead and build the image:
 ```
@@ -53,7 +54,9 @@ As we've seen before, we can run arbitrary commands in the context of the contai
 docker container run -it your_docker_id/rails_app:v1 rspec
 ```
 
-Side note: We don't need the `-it` flags here because we don't run an interactive program like the Rails console. However, we will only see the colors in the output with the `-t` flag.
+You will see that __one of the tests will fail__ - that is OK and expected! You will get the time to fix the failing test later in the workshop.
+
+_Side note:_ We don't need the `-it` flags here because we don't run an interactive program like the Rails console. However, we will only see the colors in the output with the `-t` flag.
 
 ## Finding out what is going on
 The Docker CLI is pretty straight forward. To get more information about what is possible, try just typing `docker`.
@@ -74,13 +77,15 @@ docker container kill # Kill a running container
 Go ahead an try them out!
 
 ## Cleaning up
+
+If you care about any of the containers on your system, delete just the ones you don't need using `docker container ls -a` and `docker container rm`.
+
 After you are done, it is time to clean up a little bit. If you never used Docker before or don't care about any of the containers on your system, you can run:
+
 ```
 docker container prune
 ```
 
 **!!Attention!!** This will delete all stopped containers on your system.
-
-If you care about any of the containers on your system, delete just the ones you don't need using `docker container ls -a` and `docker container rm`.
 
 [Back to the overview](../README.md#assignments)

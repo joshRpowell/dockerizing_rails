@@ -1,7 +1,7 @@
 # Assignment 4 - Talking to a service
 In order to be able to interact with our Rails application over http, we need to publish port `3000`. The following command should do the trick:
 ```
-docker container run -p 3000:3000 your_docker_id/rails_app:v1 rails s
+docker container run -it -p 3000:3000 your_docker_id/rails_app:v1 rails s
 ```
 
 As we've seen in prior assignments, we just have to append the command (`rails s`) after the image name. The `-p 3000:3000` flag makes sure that traffic that is received by the Docker Host on port 3000 is forwarded to the container on port 3000.
