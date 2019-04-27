@@ -8,6 +8,8 @@
 * Move !!Attention~~ further up - assignment 3
 * add info that we will always use -it
 * Make things bold
+* Add where to learn more section
+* Add video to what `-it` does
 
 
 ## Assignments length requirements
