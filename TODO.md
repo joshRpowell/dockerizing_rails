@@ -6,7 +6,7 @@
 * "Make sure to change into the directory that you cloned this repository into" should be bold (assignment 3)
 * Add info to do this in a serperate terminal while running debugging commands - assignment 3
 * Move !!Attention~~ further up - assignment 3
-* Why is there no output for assignment 4? (add -it flags should work here)
+* add info that we will always use -it
 * Make things bold
 
 
