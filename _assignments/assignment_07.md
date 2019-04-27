@@ -28,10 +28,14 @@ In order to see what our containers tell us on `STDOUT` we can use the following
 docker-compose logs
 ```
 
-We can also append some additional flags to the `docker-compose logs` command. Use the `--help` option to find out more.
+We can also append some additional flags to the `docker-compose logs` command. Use the `--help` option to find out more. Getting to know the `docker-compose logs` command will be __very help for debugging any issues__ that come up.
 
 ## Getting the app up and running
-Try browsing http://localhost:3000 - you will see that the database has not been migrated. That makes sense, we just created a whole new set of containers and volumes. Docker Compose automatically prefixes all resources with the project name (the name of the current directory per default). So let's run the migrations. Just as with the Docker CLI, we can run arbitrary commands in the context of a service:
+Try browsing http://localhost:3000 - you will see that the database has not been migrated. That makes sense, we just created a whole new set of containers and volumes. 
+
+__*Side note*__: Docker Compose automatically prefixes all resources with the project name (the name of the current directory per default).
+
+So let's run the migrations. Just as with the Docker CLI, we can run arbitrary commands in the context of a service:
 ```
 docker-compose run --rm app rake db:create db:migrate
 ```
@@ -46,7 +50,8 @@ docker-compose run --rm app rspec
 ```
 docker-compose run --rm app rails c
 ```
-Note that we don't have to specify the `-it` flags with `docker-compose run`. 
+
+__*Side note*__: We don't have to specify the `-it` flags with `docker-compose run`. Docker Compose takes care of that for us automatically when using the `run` command.
 
 ### Bonus
 What will happen if you just run the following command:
