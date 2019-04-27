@@ -11,7 +11,7 @@ threads threads_count, threads_count
 #
 # port        ENV.fetch("PORT") { 3000 }
 
-# We have to listen on all interfaces here to make sure that
+# We have to listen on all interfaces here to make sure that we can talk to puma from our Dockerhost
 bind "tcp://0.0.0.0:#{ENV.fetch("PORT") { 3000 }}"
 
 # Specifies the `environment` that Puma will run in.
