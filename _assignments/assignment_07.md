@@ -40,9 +40,9 @@ So let's run the migrations. Just as with the Docker CLI, we can run arbitrary c
 docker-compose run --rm app rake db:create db:migrate
 ```
 
-Now the web application should work as expected. The `--rm` in the command deletes the container right after it terminates. This is useful because we don't have to clean up after ourselves.
+Now the web application should work as expected. The `--rm` in the command deletes the container right after it terminates. This is useful because we don't have to clean up after ourselves. Go ahead and browse http://localhost:3000 to verify it works as expected.
 
-Let's try that again, but this time we will run the test suite:
+Let's try some other things - this time we will run the test suite:
 ```
 docker-compose run --rm app rspec
 ```

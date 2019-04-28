@@ -32,7 +32,7 @@ ERRO[0000] error waiting for container: context canceled
 ```
 You are already running something on port 3000. Either stop the service that is bound to port 3000 or change the local port:
 ```
-docker container run -p 3001:3000 your_docker_id/rails_app:v1 rails s
+docker container run -it -p 3001:3000 your_docker_id/rails_app:v1 rails s
 ```
 
 [Back to the overview](../README.md#assignments)

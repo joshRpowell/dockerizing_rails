@@ -39,7 +39,7 @@ CONTAINER ID        IMAGE                  COMMAND                  CREATED     
 ### Talking to the service
 Now that we have our Postgres container up and running, we need to start our Rails application. We already built the new image with the correct `database.yml` in place. If you take a quick look at the `database.yml`, you will see that we set the connection information via environment variables. We need to pass the correct environment variables to our `docker container run` command using the `-e` flag:
 ```
-docker container run -p 3000:3000 --link pg \
+docker container run -it -p 3000:3000 --link pg \
   -e POSTGRES_HOST=pg -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=secret \
   your_docker_id/rails_app:v1 rails s
 ```
@@ -52,12 +52,14 @@ __*Side note*__: `--link` is deprecated and we will learn about a better mechani
 
 If you open your browser and go to http://localhost:3000, you will see that we need to migrate our database. So let's do that in another container (in another shell):
 ```
-docker container run --link pg \
+docker container run -it --link pg \
   -e POSTGRES_HOST=pg -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=secret \
   your_docker_id/rails_app:v1 rake db:create db:migrate db:test:prepare
 ```
 
 With the database schema in place you should be able to to interact with our application through the web interface.
+
+Feel free to terminate your Rails and Postgres containers and restart them. Your data will still be there! Not sure how? `docker container ls`, `docker container stop` and `docker container rm` are your friends. And don't forget that you can get more information using the `--help` flag.
 
 ### Bonus
 * Try to run the test suite with the Postgres connection in place.
