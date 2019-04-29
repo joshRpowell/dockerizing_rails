@@ -1,5 +1,5 @@
 # Assignment 5 - integrating Postgres
-Before we start, let's clean up. Make sure to stop all containers and delete them. Either use `docker container ls -a` and `docker container rm` OR `docker container prune` (*if you don't care about any of the containers on your system*)
+Before we start, let's clean up. Make sure to stop all containers and _optionally_ delete them. Either use `docker container ls -a` and `docker container rm` OR `docker container prune` (*if you don't care about any of the containers on your system*)
 
 ## Configuring the application
 Currently, our Rails app is using SQLite as a DBMS. We're going to switch to PostgresSQL and need to update our `database.yml`. An updated `database.yml` can be found in the `config` directory
