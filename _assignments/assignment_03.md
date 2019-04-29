@@ -78,7 +78,7 @@ docker container kill # Kill a running container
 Go ahead an try them out! It might make sense to use a second terminal to run the `stop` / `kill` / `ls` / `rm` commands while you keep a container running in the other terminal.
 
 ## Cleaning up
-Now that we are donw, it is time to clean up a little bit.
+Now that we are done, it is time to clean up a little bit.
 
 If you care about any of the containers on your system, delete just the ones you don't need using `docker container ls -a` and `docker container rm`.
 

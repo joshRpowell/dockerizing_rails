@@ -1,5 +1,4 @@
 # Assignment 7 - Glueing things together
-Before we get started, make sure to stop all running containers. `docker container ls` and `docker container stop` are your friends here. Once you are done, let's remove all containers that we created in previous assignments. Either with `docker container prune` (**!!Attention!!** this will delete all stopped containers on your system) or manually with `docker container rm`.
 
 ## Preparing the Compose file
 Now that we have a clean environment, let's put the `docker-compose.yml` in place:
@@ -53,6 +52,15 @@ docker-compose run --rm app rails c
 ```
 
 __*Side note*__: We don't have to specify the `-it` flags with `docker-compose run`. Docker Compose takes care of that for us automatically when using the `run` command.
+
+
+### Shutting things down
+You can stop everything by running
+```
+docker-compose down
+```
+
+This will delete the container, but keep the volumes intact. Use the `-v` flag if you also want to delete the volumes defined in the `docker-compose.yml`.
 
 ### Bonus
 What will happen if you just run the following command:
