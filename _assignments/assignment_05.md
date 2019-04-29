@@ -98,4 +98,10 @@ Things are going wrong? Let's make them work! Here are a couple of things to try
   docker volume ls
   ```
 
+* Delete all the containers and volumes and start over (__be careful__ - this will do exactly that):
+  ```
+  docker container ls -a | xargs docker container rm
+  docker volume ls | xargs docker volume rm
+  ```
+
 [Back to the overview](../README.md#assignments)
