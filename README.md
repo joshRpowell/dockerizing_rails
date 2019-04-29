@@ -100,3 +100,7 @@ Throughout the workshop you will complete the following assignments:
 * [Assignment 8 - Iterating](_assignments/assignment_08.md)
 * [Assignment 9 - Integrating Sidekiq](_assignments/assignment_09.md)
 
+
+# Learning more
+* https://LearnDocker.online
+* https://RailsWithDocker.com
