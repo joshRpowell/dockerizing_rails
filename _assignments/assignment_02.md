@@ -20,8 +20,7 @@ Now, from within directory containing the `Dockerfile`, you can build the contai
 docker image build -t your_docker_id/cowsay:v1 .
 ```
 
-TODO: Change this as it is not correct
-You will see that Docker is first pulling our base image (`ubuntu:18.04`). After that, each individual instruction in the `Dockerfile` will be executed in order to build the image. The output of the command will look similar to this:
+The output of the command will look similar to this (note that you might not see the "Pulling from …" part if you followed the getting started part).:
 ```
 Sending build context to Docker daemon  2.048kB
 Step 1/3 : FROM ubuntu:18.04

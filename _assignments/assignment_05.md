@@ -1,4 +1,4 @@
-# Assignment 5 - Integrating Postgres
+# Assignment 5 - integrating Postgres
 Before we start, let's clean up. Make sure to stop all containers and delete them. Either use `docker container ls -a` and `docker container rm` OR `docker container prune` (*if you don't care about any of the containers on your system*)
 
 ## Configuring the application
@@ -59,11 +59,43 @@ docker container run -it --link pg \
 
 With the database schema in place you should be able to to interact with our application through the web interface.
 
-Feel free to terminate your Rails and Postgres containers and restart them. Your data will still be there! Not sure how? `docker container ls`, `docker container stop` and `docker container rm` are your friends. And don't forget that you can get more information using the `--help` flag.
+Feel free to terminate your Rails and Postgres containers and restart them. Your data will still be there!
+
+Let's start by stopping Postgres
+```
+docker container stop pg
+docker container rm pg
+```
+
+The volume `ws-pg-data` will still be there. You can verify this via:
+```
+docker volume ls
+```
 
 ### Bonus
 * Try to run the test suite with the Postgres connection in place.
 * Start a Rails console in a second container and create some records. They should show up in the Web UI.
 
+## Troubleshooting
+Things are going wrong? Let's make them work! Here are a couple of things to try
+* Make sure you copied the database.yml AND rebuild the image?
+* Remove the Postgres container and volume:
+  ```
+  docker container rm -f pg
+  docker voume rm ws-pg-data
+  ```
+
+  And then try it again
+
+* Check the logs for the Postgres container
+  ```
+  docker container logs pg
+  ```
+
+* Check if the expected containers are up and running
+  ```
+  docker container ls -a
+  docker volume ls
+  ```
 
 [Back to the overview](../README.md#assignments)
