@@ -5,6 +5,21 @@ services:
     image: joshrpowell/rails_app:v1
     build:
       context: .
+    command: ["spring", "server"]
+    volumes:
+      - ./:/usr/src/app
+    environment:
+      - POSTGRES_HOST=pg
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=secret
+      - REDIS_HOST=redis
+      - SIDEKIQ_ENABLED=true
+      - RAILS_ENV
+
+  web:
+    image: joshrpowell/rails_app:v1
+    build:
+      context: .
     command: ["rails", "server", "--pid=/tmp/server.pid"]
     volumes:
       - ./:/usr/src/app
