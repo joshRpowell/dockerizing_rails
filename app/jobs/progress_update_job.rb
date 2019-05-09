@@ -3,7 +3,7 @@ class ProgressUpdateJob
   def perform(book_id)
     book = Book.find(book_id)
     read = book.activities.sum(:pages_read)
-    progress = (100.0 / book.pages * read).round
+    progress = [(100.0 * read / book.pages).round, 100.0].min
     book.update!(progress: progress)
   end
 end

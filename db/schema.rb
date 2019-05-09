@@ -10,10 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_10_004300) do
+ActiveRecord::Schema.define(version: 2019_05_09_141020) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "activities", force: :cascade do |t|
-    t.integer "book_id"
+    t.bigint "book_id"
     t.integer "pages_read"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,4 +31,12 @@ ActiveRecord::Schema.define(version: 2019_02_10_004300) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "readers", force: :cascade do |t|
+    t.string "name"
+    t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "activities", "books"
 end
